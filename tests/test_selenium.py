@@ -1,12 +1,13 @@
-from selenium import webdriver
-from src.utilities.driver_factory import DriverFactory
+# tests/TestSelenium.py
+
 import pytest
+from src.utilities.driver_factory import DriverFactory
 
 @pytest.fixture(scope="module")
 def setup_driver():
     driver = DriverFactory.get_driver()
     yield driver
-    driver.quit()
+    DriverFactory.quit_driver(driver)
 
 def test_home_page_title(setup_driver):
     driver = setup_driver
