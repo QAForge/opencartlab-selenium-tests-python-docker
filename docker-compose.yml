@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  selenium:
+    build:
+      context: ./docker/selenium
+      dockerfile: Dockerfile
+    ports:
+      - "4444:4444"
+    volumes:
+      - ./src:/app/src
+      - ./tests:/app/tests
+    environment:
+      - ENV_FILE=.env
+    networks:
+      - selenium-network
+
+networks:
+  selenium-network:
+    driver: bridge

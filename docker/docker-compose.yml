@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  selenium:
+    build:
+      context: ./selenium
+      dockerfile: Dockerfile
+    ports:
+      - "4444:4444"
+    volumes:
+      - ./tests:/app/tests
+      - ./src:/app/src
+    environment:
+      - PYTHONUNBUFFERED=1
+
+networks:
+  default:
+    driver: bridge
