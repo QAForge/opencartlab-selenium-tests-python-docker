@@ -53,10 +53,39 @@ coverage.xml
 *.cover
 *.py,cover
 
-# logs and debugging
+# test reports
+reports/
+report.html
+*.html
+
+# =============================
+# Docker & Env
+# =============================
+
 *.log
-*.out
-*.err
+docker-compose.override.yml
+.env.*
+!.env
+.env.local
+
+# =============================
+# Python Extras
+# =============================
+
+*.pyo
+*.pyd
+*.pdb
+*.tmp
+*.temp
+*.bak
+
+# =============================
+# Reports / Allure / JUnit
+# =============================
+
+# allure-results/
+# allure-report/
+# *.xml
 
 # =============================
 # IntelliJ IDEA / PyCharm
@@ -69,6 +98,10 @@ coverage.xml
 !.idea/codeStyles/
 !.idea/inspectionProfiles/
 !.idea/runConfigurations/
+.idea/shelf/
+.idea/tasks.xml
+.idea/workspace.xml
+.idea/dictionaries/
 *.iws
 *.ipr
 *.iml
@@ -79,7 +112,7 @@ coverage.xml
 .idea/compiler.xml
 
 # =============================
-# Java & Maven/Gradle (optional if mixed project)
+# Java & Maven/Gradle
 # =============================
 
 target/
@@ -94,6 +127,16 @@ target/
 # =============================
 
 .vscode/
+.vscode/*.code-workspace
+.vscode/*.db
+
+# =============================
+# Pipenv / Poetry
+# =============================
+
+Pipfile.lock
+poetry.lock
+*.lock
 
 # =============================
 # OS Specific
